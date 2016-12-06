@@ -1,0 +1,22 @@
+{
+  "name": "calendar-application",
+  "version": "1.0.0",
+  "description": "An application for planning events through the months, days and years",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/I-Diva/Bootcamp-Project-Calendar-Application.git"
+  },
+  "author": "Olayemi Awofadeju",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/I-Diva/Bootcamp-Project-Calendar-Application/issues"
+  },
+  "homepage": "https://github.com/I-Diva/Bootcamp-Project-Calendar-Application#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
