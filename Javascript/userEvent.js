@@ -5,7 +5,7 @@ var myUserRef;
 function init() {
   getId('logout').style.color = 'white';
   greet();
-  myUserRef = new Firebase('https://calendar-c8106.firebaseio.com' + localStorage.getItem('database'));
+  firebase.auth().signOut(postData.logout);
   loadItems();
 }
 
@@ -24,14 +24,24 @@ function loadItems() {
   });
 }
 
-
-function loopThroughItems(obj) {
+function getYears(value) {
   try {
-    document.getElementById('rem').innerHTML = obj.length;
-    for (var c = 0; c < obj.length; c++) {
-      array.push(new addEvent(obj[c].title, obj[c].start, obj[c].backgroundColor, obj[c].borderColor));
-      $('#calendar').fullCalendar('addEvent', new addEvent(obj[c].title, obj[c].start, obj[c].backgroundColor, obj[c].borderColor));
-      $('#calendar').fullCalendar('renderEvent', new addEvent(obj[c].title, obj[c].start, obj[c].backgroundColor, obj[c].borderColor), true);
+    document.getElementById('year').innerHTML = value;
+    for (var i = 1900; i <= value; i++) {
+      var years = value;
+      return years;
+    }
+  }
+}
+return (getYears(2100));
+
+function loopThroughItems(items) {
+  try {
+    document.getElementById('rem').innerHTML = items.length;
+    for (var i = 0; i < items.length; i++) {
+      array.push(new addEvent(items[i].title, items[i].start, items[i].backgroundColor, items[i].borderColor));
+      $('#calendar').fullCalendar('addEvent', new addEvent(items[i].title, items[i].start, items[i].backgroundColor, items[i].borderColor));
+      $('#calendar').fullCalendar('renderEvent', new addEvent(items[i].title, items[i].start, items[i].backgroundColor, items[i].borderColor), true);
     }
   } catch (err) {
     console.log('initial load');
@@ -39,27 +49,27 @@ function loopThroughItems(obj) {
 }
 
 
-function saveEvent(title, date, alldate, bgcss, bdcss) {
-  var dd = new Date(date._d);
-  array.push({ title: title, start: new Date(dd.getFullYear(), dd.getMonth(), dd.getDate() + 1), backgroundColor: bgcss, borderColor: bdcss });
-  myUserRef.update({ 'event': array });
+function saveEvent(title, date, alldate, backgroundColor, borderColor) {
+  var userDate = new Date(date._d);
+  array.push({ title: title, start: new Date(userDate.getFullYear(), userDate.getMonth(), userDate.getDate() + 1), backgroundColor: backgroundColor, borderColor: borderColor });
+  ref.update({ 'event': array });
 }
 
 function reSaveEvent(title, date) {
-  var dd = new Date(date);
+  var userDate = new Date(date);
   for (var index = 0; index < array.length; index++) {
     if (array[index].title === title) {
-      array[index].start = dd;
+      array[index].start = userDate;
     }
   }
-  myUserRef.update({ 'event': array });
+  ref.update({ 'event': array });
 }
 
-function addEvent(title, start, bg, bc) {
+function addEvent(title, start, backGround, border) {
   this.title = title;
   this.start = start;
-  this.backgroundColor = bg;
-  this.borderColor = bc;
+  this.backgroundColor = backGround;
+  this.borderColor = border;
 
 }
 
