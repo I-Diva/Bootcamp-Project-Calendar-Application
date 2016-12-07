@@ -23,7 +23,7 @@
 <body style="background-color: #FFFFFF" class="hold-transition register-page">
   <div class="register-box">
     <div class="register-logo">
-      <a href="index.html"><strong><em>Calendar </em></strong><em>Application</em></a>
+      <a href="index.html"><strong><em>Calendar</em></strong><em> Application</em></a>
     </div>
     <div class="register-box-body">
       <p class="login-box-msg">Create an Account</p>
@@ -66,12 +66,24 @@
   </div>
   <!-- /.register-box -->
   <!-- jQuery 2.2.3 -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA4hfqhgEczOmY_9ErdDHOUE5t_tLIdf2M",
+    authDomain: "calendar-c8106.firebaseapp.com",
+    databaseURL: "https://calendar-c8106.firebaseio.com",
+    storageBucket: "calendar-c8106.appspot.com",
+    messagingSenderId: "5009155256"
+  };
+  firebase.initializeApp(config);
+  </script>
   <script src="../plugins/jQuery/jQuery-2.2.3.min.js"></script>
   <!-- Bootstrap 3.3.5 -->
   <script src="../bootstrap/js/bootstrap.min.js"></script>
   <!-- iCheck -->
   <script src="../plugins/iCheck/icheck.min.js"></script>
-  <script src="../Javascript/login.js"></script>
+  <script src="../Javascript/loginHelper.js"></script>
   <script src="../Javascript/userSignup.js"></script>
   <script src="../Javascript/iCheck.js"></script>
 </body>
