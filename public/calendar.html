@@ -76,11 +76,10 @@
             <a href="#">
               <i class="fa fa-calendar"></i> <span>Calendar Years lists</span> * <small class="label pull-right bg-red" id="rem">0</small>
               <br>
-              <select id="year" name="year" placeholder="Select Year">
-                <option value="">Select Year</option>
-                <!--<script src="../Javascript/userEvent.js"></script>-->
+              <select name="month" id="month" onclick="getYears()">
+                <option value="">select a year</option>
               </select>
-            </a>S
+            </a>
           </li>
         </ul>
       </section>
@@ -222,7 +221,7 @@
   <script src="../plugins/fullcalendar/fullcalendar.js"></script>
   <!-- Page specific script -->
   <script src="../Javascript/loginHelper.js"></script>
-  <script src="../Javascript/userEvents.js"></script>
+  <script src="../Javascript/userEvent.js"></script>
   <script src="../Javascript/fullCalendar.js"></script>
 </body>
 

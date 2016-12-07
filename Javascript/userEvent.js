@@ -5,8 +5,6 @@ var myUserRef;
 function init() {
   getId('logout').style.color = 'white';
   greet();
-  firebase.auth().signOut(postData.logout);
-  loadItems();
 }
 
 function greet() {
@@ -14,26 +12,17 @@ function greet() {
   getId('greet').innerHTML = 'Welcome  ' + localStorage.getItem('currentUser');
 }
 
-function loadItems() {
-  myUserRef.on("value", function(snapshot) {
-    if (!started) {
-      var message = snapshot.val();
-      loopThroughItems(message.event); //(message.event)
-    }
-    started = true;
-  });
-}
+function getYears() {
 
-function getYears(value) {
-  try {
-    document.getElementById('year').innerHTML = value;
-    for (var i = 1900; i <= value; i++) {
-      var years = value;
-      return years;
-    }
-  }
+  $('#month').on('change', function() {
+
+    year = $("#calendar").fullCalendar('getDate').format('YYYY');
+    var m = moment([this.value, 0, 1]).format('YYYY-MM-DD');
+    console.log(m)
+    $('#calendar').fullCalendar('gotoDate', m);
+  });
+
 }
-return (getYears(2100));
 
 function loopThroughItems(items) {
   try {
@@ -51,8 +40,15 @@ function loopThroughItems(items) {
 
 function saveEvent(title, date, alldate, backgroundColor, borderColor) {
   var userDate = new Date(date._d);
-  array.push({ title: title, start: new Date(userDate.getFullYear(), userDate.getMonth(), userDate.getDate() + 1), backgroundColor: backgroundColor, borderColor: borderColor });
-  ref.update({ 'event': array });
+  array.push({
+    title: title,
+    start: new Date(userDate.getFullYear(), userDate.getMonth(), userDate.getDate() + 1),
+    backgroundColor: backgroundColor,
+    borderColor: borderColor
+  });
+  ref.update({
+    'event': array
+  });
 }
 
 function reSaveEvent(title, date) {
@@ -62,7 +58,9 @@ function reSaveEvent(title, date) {
       array[index].start = userDate;
     }
   }
-  ref.update({ 'event': array });
+  ref.update({
+    'event': array
+  });
 }
 
 function addEvent(title, start, backGround, border) {
@@ -74,3 +72,11 @@ function addEvent(title, start, backGround, border) {
 }
 
 window.addEventListener('load', init, false);
+
+$(document).ready(function() {
+  console.log("ready boss")
+  for (let i = 2016; i <= 2050; i++) {
+    var option = $('<option></option>').text(i)
+    $('select').append(option)
+  }
+})
