@@ -1,3 +1,4 @@
+// Event handlers for user signup and login page
 function registerClickEvent(id, callback) {
   getId(id).addEventListener('click', callback, false);
 }
@@ -29,8 +30,8 @@ function isEmail(email) {
 }
 
 
-function isValidPassword(password1, password2) {
-  if (getId(password1).value == getId(password2).value) {
+function isValidPassword(password, confirm) {
+  if (getId(password).value == getId(confirm).value) {
     return true;
   }
   return false;

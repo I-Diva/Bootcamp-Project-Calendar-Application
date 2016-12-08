@@ -1,7 +1,5 @@
+//once the page is loaded, the user can signout when ready
 $(document).ready(function() {
-
-  //alert("Success!")
-
   var signOut = function() {
     console.log('Hello');
     firebase.auth().signOut().then(function() {

@@ -1,18 +1,17 @@
+// declare variable for your date array
 var array = [];
-var started = false;
 
 function init() {
   getId('logout').style.color = 'white';
   greet();
 }
-
+// to be used later
 function greet() {
   getId('greet').style.color = 'white';
-  getId('greet').innerHTML = 'Welcome  ' + localStorage.getItem('currentUser');
 }
-
 window.addEventListener('load', init);
 
+// create a function for looping through a selected number of years
 function getYears() {
 
   $('#month').on('change', function() {
@@ -24,10 +23,10 @@ function getYears() {
   });
 
 }
-
+// use jquery to access your option tags for dropdown list of years
 $(document).ready(function() {
   console.log("success")
-  for (var i = 2016; i <= 2050; i++) {
+  for (var i = 1990; i <= 2050; i++) {
     var option = $('<option>""</option>').text(i)
     $('select').append(option)
   }

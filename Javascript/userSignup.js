@@ -1,3 +1,4 @@
+//assign element ids to object variables
 var signupButton = document.getElementById('register');
 var username = document.getElementById('fullName');
 var password = document.getElementById('password');
@@ -9,26 +10,27 @@ function signup(event) {
   'use strict';
   event.preventDefault();
   var postData = {
-    register: register.value,
-    fullName: fullName.value,
+    register: signupButton.value,
+    fullName: username.value,
     password: password.value,
-    confirm: confirm.value,
+    confirm: verify.value,
     email: email.value,
   };
-
+  // firebase user registration authentication
   var database = firebase.database();
-  console.log(postData);
-  firebase.auth().createUserWithEmailAndPassword(postData.email, postData.password)
-    .then(function(user) {
-      //database.ref('/users/' + user.uid).set(postData);
-      linkTo('login.html');
-    })
-    .catch(function(err) {
-      if (err.code === 'auth/weak-password') {
-        alert('The password is too week')
-      } else {
-        alert(err.message);
-      }
-      console.log(err);
-    });
+  console.log(postData.password + " " + postData.confirm);
+  if (postData.password != postData.confirm) {
+    alert('The password is invalid')
+  } else {
+    firebase.auth().createUserWithEmailAndPassword(postData.email, postData.password)
+      .then(function(user) {
+        database.ref('/users/' + user.uid).set(postData);
+        linkTo('login.html');
+
+      })
+      .catch(function(err) {
+        alert('user already registered');
+        linkTo('login.html');
+      })
+  };
 }
