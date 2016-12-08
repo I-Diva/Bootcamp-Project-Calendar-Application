@@ -7,7 +7,6 @@ var verify = document.getElementById('confirm');
 signupButton.addEventListener('click', signup);
 
 function signup(event) {
-  'use strict';
   event.preventDefault();
   var postData = {
     register: signupButton.value,
