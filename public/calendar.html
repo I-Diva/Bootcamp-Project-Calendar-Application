@@ -41,7 +41,7 @@
           <span class="icon-bar"></span>
         </a>
         <div class="navbar-custom-menu">
-          <button><a href="logIn.html" id="logout"> Sign Out </a></button>
+          <button style="background-color:#062F4F"><a href="logIn.html" id="logout"> Sign Out </a></button>
         </div>
       </nav>
     </header>
@@ -52,32 +52,24 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div>
-            <h5 id='greet'></h5> Welcome
+            <h5 id='greet'></h5>
           </div>
           <div class="pull-left info">
             <p id="username"></p>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online </a>
           </div>
         </div>
         <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-          </div>
-        </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-          <li class="header">MAIN NAVIGATION</li>
+          <li style="color:#FFFFFF" class="header">MAIN NAVIGATION</li>
           <li class="active">
             <a href="#">
-              <i class="fa fa-calendar"></i> <span>Calendar Years lists</span> * <small class="label pull-right bg-red" id="rem">0</small>
+              <i class="fa fa-calendar"></i> <span>List of Years</span><small class="label pull-right bg-red" id="rem"></small>
               <br>
-              <select name="month" id="month" onclick="getYears()">
-                <option value="">select a year</option>
+              <select style="background-color: #0375B4" name="month" id="month" onclick="getYears();">
+                <option value="getYears()">select a year</option>
               </select>
             </a>
           </li>
@@ -109,11 +101,11 @@
               <div class="box-body">
                 <!-- the events -->
                 <div id="external-events">
-                  <div class="external-event bg-green">Lunch</div>
-                  <div class="external-event bg-yellow">Go home</div>
-                  <div class="external-event bg-aqua">Do homework</div>
-                  <div class="external-event bg-light-blue">Work on UI design</div>
-                  <div class="external-event bg-red">Sleep tight</div>
+                  <div class="external-event bg-green">write articles</div>
+                  <div class="external-event bg-yellow">work on project</div>
+                  <div class="external-event bg-aqua">Cook Beans</div>
+                  <div class="external-event bg-light-blue">Appointment</div>
+                  <div class="external-event bg-red">update journal</div>
                   <div class="checkbox">
                     <label for="drop-remove">
                       <input type="checkbox" id="drop-remove"> remove after drop
@@ -126,7 +118,7 @@
             <!-- /. box -->
             <div class="box box-solid">
               <div class="box-header with-border">
-                <h3 class="box-title">Create Event</h3>
+                <h3 class="box-title">New Event</h3>
               </div>
               <div class="box-body">
                 <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
@@ -223,6 +215,7 @@
   <script src="../Javascript/loginHelper.js"></script>
   <script src="../Javascript/userEvent.js"></script>
   <script src="../Javascript/fullCalendar.js"></script>
+  <script src="../Javascript/userSignout.js"></script>
 </body>
 
 </html>

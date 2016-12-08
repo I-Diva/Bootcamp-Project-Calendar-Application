@@ -1,11 +1,7 @@
 var button = document.getElementById('signIn');
 var email = document.getElementById('email');
 var password = document.getElementById('password');
-
-
 button.addEventListener('click', signIn, false);
-
-
 
 function signIn(event) {
   'use strict';
@@ -22,13 +18,7 @@ function signIn(event) {
 }
 
 function signOut(user) {
-  //firebase.auth().signOut()
-  // .then(function(user) {
+
   console.log('Signed Out')
-    // linkTo('login.html');
-    // Sign-out successful.
-    // }, function(error) {
-    // An error happened.
-    //  console.log('Sign Out Error', error);
-    // });
+
 }
