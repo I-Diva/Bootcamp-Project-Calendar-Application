@@ -24,12 +24,12 @@ function signup(event) {
     firebase.auth().createUserWithEmailAndPassword(postData.email, postData.password)
       .then(function(user) {
         database.ref('/users/' + user.uid).set(postData);
-        linkTo('login.html');
+        linkTo('../login.html');
 
       })
       .catch(function(err) {
         alert('user already registered');
-        linkTo('login.html');
+        linkTo('../login.html');
       })
   };
 }
