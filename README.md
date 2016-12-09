@@ -15,7 +15,7 @@ It has the following additional features:
 
  - List of Years
 
- Application Tools
+Application Tools
 
  HTML 5
 
