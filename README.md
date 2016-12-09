@@ -17,10 +17,10 @@ It has the following additional features:
 
 Application Tools
 
- HTML 5
+ - HTML 5
 
- Javascript
+ - Javascript
 
- Jquery
+ - Jquery
 
- Full Javascript Event calendar Plugin
+ - Full Javascript Event calendar Plugin
