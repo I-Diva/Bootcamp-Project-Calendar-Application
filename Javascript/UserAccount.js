@@ -10,7 +10,7 @@ function signIn(event) {
   firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then(function(user) {
       console.log(user);
-      linkTo('index.html');
+      linkTo('../index.html');
     })
     .catch(function(err) {
       alert('Invalid username or password');
