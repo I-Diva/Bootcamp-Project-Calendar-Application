@@ -14,3 +14,13 @@ It has the following additional features:
  - Months in a Year
 
  - List of Years
+
+ Application Tools
+
+ HTML 5
+
+ Javascript
+
+ Jquery
+
+ Full Javascript Event calendar Plugin
